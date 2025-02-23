@@ -1,0 +1,32 @@
+story_generation:
+  base: |
+    Generate a German language learning story with the following characteristics:
+    - Difficulty level: {difficulty}
+    - Include everyday situations and practical vocabulary
+    - Focus on natural dialogue and common expressions
+    - Incorporate target grammar points appropriate for the level
+    Return the story in the following format:
+    - Title in both German and English
+    - Story text in German
+    - Vocabulary list with translations
+    - Key grammar points used in the story
+
+scene_creation:
+  base: |
+    Create an interactive scene based on the following story:
+    {story}
+    Include:
+    - Natural dialogue exchanges
+    - Expected user responses
+    - Helpful hints for learners
+    - Progressive difficulty in interactions
+
+grammar_checking:
+  base: |
+    Analyze the following German text for grammatical correctness:
+    {text}
+    Provide:
+    - Corrections if needed
+    - Explanations of errors
+    - Suggestions for improvement
+    - Alternative phrasings if applicable

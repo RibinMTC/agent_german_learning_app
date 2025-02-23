@@ -1,0 +1,44 @@
+default_model: gpt-4-turbo
+prompts_path: config/prompts.yaml
+
+# LiteLLM Configuration
+litellm_config:
+  # Default settings for all models
+  default_settings:
+    max_tokens: 4096
+    temperature: 0.7
+    request_timeout: 30
+
+  # Model-specific settings
+  model_list:
+    - model_name: gpt-4-turbo
+      litellm_params:
+        model: gpt-4-turbo-preview
+        api_key: ${OPENAI_API_KEY}
+
+    - model_name: claude-3
+      litellm_params:
+        model: claude-3-opus-20240229
+        api_key: ${ANTHROPIC_API_KEY}
+
+    - model_name: gemini-pro
+      litellm_params:
+        model: gemini-pro
+        api_key: ${GOOGLE_API_KEY}
+
+    - model_name: mistral-large
+      litellm_params:
+        model: mistral/mistral-large-latest
+        api_key: ${MISTRAL_API_KEY}
+
+    - model_name: local-model
+      litellm_params:
+        model: ollama/mistral
+        api_base: http://localhost:11434
+
+# Fallback configuration
+fallback_models:
+  - gpt-4-turbo
+  - claude-3
+  - mistral-large
+  - local-model
